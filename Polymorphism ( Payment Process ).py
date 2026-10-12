@@ -23,28 +23,23 @@ class Wallet:
         print("Payment made through Wallet")
 
 
-choice = input("Enter payment method: ")
+choice = input("Enter payment method: ").strip().lower()
 
 match choice:
-    case "Cash":
-        Cash = Cash()
-        Cash.payment()
-
-    case "UPI":
-        UPI = UPI()
-        UPI.payment()
-
-    case "Card":
-        Card = Card()
-        Card.payment()
-
-    case "NetBanking":
-        NetBanking = NetBanking()
-        NetBanking.payment()
-
-    case "Wallet":
-        Wallet = Wallet()
-        Wallet.payment()
-
+    case "cash":
+        method = Cash()
+    case "upi":
+        method = UPI()
+    case "card":
+        method = Card()
+    case "netbanking":
+        method = NetBanking()
+    case "wallet":
+        method = Wallet()
     case _:
-        print("Invalid payment method")
+        method = None
+
+if method:
+    method.payment()      # same call, different behaviour: polymorphism
+else:
+    print("Invalid payment method")
