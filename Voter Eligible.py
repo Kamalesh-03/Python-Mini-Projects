@@ -1,14 +1,9 @@
 age = int(input("Enter your age: "))
-country = input("Enter your country: ")
+country = input("Enter your country: ").strip().lower()
 
-if country == "india" and age >= 18:
-    print("you are eligible to vote")
-
-elif country != "india":
-    print("you are not eligible to vote")
-
+if country != "india":
+    print("You are not eligible to vote")
 elif age < 18:
-    print("you are not eligible to vote, because you are below 18" )
-
+    print("You are not eligible to vote, because you are below 18")
 else:
-    print("error")
+    print("You are eligible to vote")
