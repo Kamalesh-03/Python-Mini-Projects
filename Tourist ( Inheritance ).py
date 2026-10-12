@@ -1,50 +1,49 @@
-class tourist:
+class Tourist:
     def information(self):
         print("tourist place")
 
-class tirunelvelitown(tourist):
+
+class TirunelveliTown(Tourist):
     def information(self):
         print("tirunelvelitown - nellaiyappar temple, iruttu kadai, and etc...")
 
-class courtallam(tourist):
+
+class Courtallam(Tourist):
     def information(self):
         print("courtallam - falls, mountains, and etc...")
 
-class johncollege(tourist):
+
+class JohnCollege(Tourist):
     def information(self):
         print("johncollege - studies, job fairs, culturals and etc...")
 
-class porunai(tourist):
+
+class Porunai(Tourist):
     def information(self):
         print("porunai - old age weapons, money, and etc...")
 
-class kalakad(tourist):
+
+class Kalakaddam(Tourist):
     def information(self):
         print("kalakaddam - natural spots, scenic view and etc...")
 
-while True:
 
-    place = input("enter place: ")
+while True:
+    place = input("enter place: ").strip().lower()
 
     match place:
         case "tirunelvelitown":
-            tirunelvelitown().information()
-
+            TirunelveliTown().information()
         case "courtallam":
-            courtallam().information()
-
+            Courtallam().information()
         case "johncollege":
-            johncollege().information()
-
+            JohnCollege().information()
         case "porunai":
-            porunai().information()
-
+            Porunai().information()
         case "kalakaddam":
-            kalakaddam().information()
-
+            Kalakaddam().information()
         case "exit":
             print("program ended")
             break
-
         case _:
             print("place not available")
